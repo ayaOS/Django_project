@@ -1,2 +1,7 @@
-D
-This is Read Me file
+This is ReadMe file
+
+Django Project Team :
+Aya Aly Hassan
+Ghada Gamal
+Caroline Samy
+Mervat Mosaad
