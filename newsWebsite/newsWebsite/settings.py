@@ -80,7 +80,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'newsdb',
        'USER':'root',
+<<<<<<< HEAD
        'PASSWORD':'mememe',
+=======
+       'PASSWORD':'123',
+>>>>>>> 3ae765f9d5ed5820869389152639bb3145e9161d
        'HOST':'localhost',
        'PORT':'3306'
     }
