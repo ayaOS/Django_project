@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Posts</title>
+</head>
+<body>
+<h2><a href="/adminApp/home/newPost">Add New Post</a></h2>
+
+<table border="1">
+	<tr>
+		<th>Title</th>
+		<th>Content</th>
+		<th>Date</th>
+		<th colspan="2">Settings</th>
+	</tr>
+	{%for p in posts%}
+	<tr>
+		<td>{{p.title}}</td>
+		<td>{{p.content}}</td>
+		<td>{{p.date}}</td>
+		<td><a href="/adminApp/home/editPost/{{p.id}}">Edit</a></td>
+		<td><a href="/adminApp/home/deletePost/{{p.id}}">Delete</a></td>
+	</tr>
+	{%endfor%}
+</table>
+
+</body>
+</html>
