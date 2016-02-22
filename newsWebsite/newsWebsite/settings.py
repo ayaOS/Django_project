@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'newsApp',
-    'adminApp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +56,7 @@ ROOT_URLCONF = 'newsWebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'newsApp.templates'), os.path.join(BASE_DIR, 'adminApp.templates')],
+        'DIRS': [os.path.join(BASE_DIR,'newsApp.templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'newsdb',
        'USER':'root',
-       'PASSWORD':'123',
+       'PASSWORD':'1234',
        'HOST':'localhost',
        'PORT':'3306'
     }

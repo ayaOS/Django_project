@@ -9,6 +9,8 @@ class Post(models.Model):
 	content = models.TextField()
 	date = models.DateField()
 	upload_image = models.ImageField(upload_to='resources/%Y/%m/%d/')
+	def __str__(self):
+		return self.title
 	#image
 	#tag
 class User(models.Model):
@@ -22,6 +24,8 @@ class Comment(models.Model):
     user = models.ForeignKey(User)
     text = models.TextField()
     date = models.DateTimeField()
+    def __str__(self):
+		return self.text
     #reply_to = models.ForeignKey(Comment, blank=True, null=True)
 
 
