@@ -8,7 +8,7 @@ class Post(models.Model):
 	title = models.CharField(max_length=50)
 	content = models.TextField()
 	date = models.DateField()
-	upload_image = models.ImageField(upload_to='resources/%Y/%m/%d/', null=True, blank=True)
+	upload_image = models.ImageField(upload_to='resources/%Y/%m/%d/')
 	#image
 	#tag
 class User(models.Model):

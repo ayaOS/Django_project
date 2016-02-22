@@ -11,6 +11,7 @@
 		<th>Title</th>
 		<th>Content</th>
 		<th>Date</th>
+		<th>Image</th>
 		<th colspan="2">Settings</th>
 	</tr>
 	{%for p in posts%}
@@ -18,8 +19,10 @@
 		<td>{{p.title}}</td>
 		<td>{{p.content}}</td>
 		<td>{{p.date}}</td>
+		<td>{{p.upload_image}}</td>
 		<td><a href="/adminApp/home/editPost/{{p.id}}">Edit</a></td>
 		<td><a href="/adminApp/home/deletePost/{{p.id}}">Delete</a></td>
+
 	</tr>
 	{%endfor%}
 </table>
