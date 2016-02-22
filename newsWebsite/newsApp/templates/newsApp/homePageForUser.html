@@ -4,6 +4,13 @@
 	<title>User Home Page</title>
 </head>
 <body>
-hi user
+
+{%for p in posts%}
+<div style="width: 500px; height: 200px; border-style: groove;">
+	<h1>{{p.title}}</h1><br>
+	<h3>{{p.content}}</h3>
+</div>
+{%endfor%}
+
 </body>
 </html>
