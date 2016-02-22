@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import Post
 from .models import Comment
-from .models import User
+
 
 class CustomPost(admin.ModelAdmin):
 	search_fields = ['title']
@@ -18,4 +18,3 @@ class CustomComment(admin.ModelAdmin):
 # register the models
 admin.site.register(Post,CustomPost)
 admin.site.register(Comment,CustomComment)
-admin.site.register(User)
