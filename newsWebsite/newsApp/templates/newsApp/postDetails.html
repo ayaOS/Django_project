@@ -14,7 +14,7 @@
 
 	<h3 style="text-align: left;">Comments:</h3><br>
 	{%for c in comments%}
-	<div style="width: 300px; height: 100px; border-style: solid;">
+	<div style="width: 500px; height: 100px; border-style: solid; overflow-y: scroll;">
 		<h5>{{c.date}} , {{c.user}}</h5>
 		<h3>{{c.text}}</h3>
 		<br>
