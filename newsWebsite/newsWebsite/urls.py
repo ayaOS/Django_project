@@ -19,7 +19,7 @@ from newsApp.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^newsApp/', include('newsApp.urls') ),
-    url(r'^adminApp/', include('adminApp.urls') ),
+   # url(r'^adminApp/', include('adminApp.urls') ),
  url(r'^$', 'django.contrib.auth.views.login'),
     url(r'^logout/$', logout_page),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'), # If user is not login it will redirect to login page

@@ -13,6 +13,7 @@ class Post(models.Model):
 		return self.title
 	#image
 	#tag
+	
 class User(models.Model):
 	email = models.CharField(max_length=50)
 	Name = models.CharField(max_length=50)

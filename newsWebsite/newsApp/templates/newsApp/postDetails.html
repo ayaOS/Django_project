@@ -7,14 +7,15 @@
 
 <h2><a href="/newsApp/home">Back</a></h2>
 
-<div style="width: 600px; height: 500px; text-align: justify;">
+<div style="width: 600px; height: 500px; text-align: justify; margin: auto;">
 	<h1 style="text-decoration: underline; text-align: center;">{{post.title}}</h1>
-	<img src="{{post.upload_image.url}}" alt="Post Image" height="100" width="100" >
+
+	<img src="{{post.upload_image.url}}" alt="Post Image" height="150" width="150" >
 	<p>{{post.content}}</p>
 
 	<h3 style="text-align: left;">Comments:</h3><br>
 	{%for c in comments%}
-	<div style="width: 500px; height: 100px; border-style: solid; overflow-y: scroll;">
+	<div style="width: 500px; height: 200px; border-style: solid; overflow-y: scroll;">
 		<h5>{{c.date}} , {{c.user}}</h5>
 		<h3>{{c.text}}</h3>
 		<br>

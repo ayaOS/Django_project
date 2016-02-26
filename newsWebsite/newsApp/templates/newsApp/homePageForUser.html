@@ -4,10 +4,12 @@
 	<title>User Home Page</title>
 </head>
 <body>
-
+<h1 style="text-align: center;">New Posts</h1><hr><br>
 {%for p in posts%}
-<div style="width: 500px; height: 200px; border-style: groove; text-align: justify; overflow-y: scroll;">
-	<h1 style="text-decoration: underline; text-align: center;">{{p.title}}</h1><br>
+<div   style="margin: auto; width: 500px; height: 200px; border-style: groove; text-align: justify; overflow-y: scroll; ">
+	
+	
+	<h2 style="text-decoration: underline; text-align: center;">{{p.title}}</h2><br>
 	<h3>{{p.content}}</h3>
 	<a href="/newsApp/home/post/{{p.id}}">Show Full Post</a>
 </div>
