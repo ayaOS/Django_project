@@ -10,7 +10,7 @@
 	
 	
 	<h2 style="text-decoration: underline; text-align: center;">{{p.title}}</h2><br>
-	<h3>{{p.content}}</h3>
+	<h3>{{p.content|safe}}</h3>
 	<a href="/newsApp/home/post/{{p.id}}">Show Full Post</a>
 </div>
 <br>
