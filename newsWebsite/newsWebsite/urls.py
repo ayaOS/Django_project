@@ -16,14 +16,24 @@ Including another URLconf
 from django.conf.urls import url , include
 from django.contrib import admin
 from newsApp.views import *
+from django.conf import settings
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^newsApp/', include('newsApp.urls') ),
-   # url(r'^adminApp/', include('adminApp.urls') ),
- url(r'^$', 'django.contrib.auth.views.login'),
+  
+   #to upload images
+   url(r'^ckeditor/', include('ckeditor_uploader.urls')), #Added Uploader url
+   url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT}),
+
+
+
+    url(r'^$', 'django.contrib.auth.views.login'),
     url(r'^logout/$', logout_page),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'), # If user is not login it will redirect to login page
     url(r'^register/$', register),
-   url(r'^home/$', homePageForUser),
+    url(r'^home/$', homePageForUser),
     url(r'^register/success/$', register_success),
 ]

@@ -2,12 +2,13 @@ from __future__ import unicode_literals
 from datetime import date,datetime
 from django.db import models
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
 class Post(models.Model):
 	title = models.CharField(max_length=50)
-	content = RichTextField()
+	content = RichTextUploadingField()
 	date = models.DateField()
 	upload_image = models.ImageField(upload_to='resources/%Y/%m/%d/')
 	def __str__(self):

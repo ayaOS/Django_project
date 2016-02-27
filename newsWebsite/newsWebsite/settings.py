@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor_uploader',
     'newsApp',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -133,3 +134,7 @@ CKEDITOR_CONFIGS = {
     'toolbar':None,
     }
 }
+
+#to upload image in admin panel
+MEDIA_ROOT='/home/aya/Desktop/Django_Project/newsWebsite/uploads'
+MEDIA_URL = '/media/'
