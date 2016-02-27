@@ -26,5 +26,4 @@ urlpatterns = [
     url(r'^register/$', register),
    url(r'^home/$', homePageForUser),
     url(r'^register/success/$', register_success),
-    
 ]
