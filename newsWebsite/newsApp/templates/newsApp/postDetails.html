@@ -3,11 +3,11 @@
 <head>
 	<title>Post Details</title>
 </head>
-<body>
+<body style="background-color:#F1F1F4;">
 
-<h2><a href="/newsApp/home">Back</a></h2>
+<h2><a href="/newsApp/home" >Back</a></h2>
 
-<div style="width: 600px; height: 500px; text-align: justify; margin: auto;">
+<div style="width: 600px; height: 500px; text-align: justify; margin: auto; ">
 	<h1 style="text-decoration: underline; text-align: center;">{{post.title}}</h1>
 
 	<img src="{{post.upload_image.url}}" alt="Post Image" height="150" width="150" >
@@ -15,9 +15,9 @@
 
 	<h3 style="text-align: left;">Comments:</h3><br>
 	{%for c in comments%}
-	<div style="width: 500px; height: 200px; border-style: solid; overflow-y: scroll;">
-		<h5>{{c.date}} , {{c.user}}</h5>
-		<h3>{{c.text}}</h3>
+	<div style="width: 550px; height: 250px; border-style: solid; overflow-y: scroll; background-color: #FCFCFC;">
+		<h5 style="padding-left: 1cm; padding-right: 1cm;">{{c.date}} , {{c.user}}</h5>
+		<h3 style="padding-left: 1cm; padding-right: 1cm;">{{c.text}}</h3>
 		<br>
 	</div>
 	<br>

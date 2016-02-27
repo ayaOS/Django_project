@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', #sessions
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -136,5 +136,5 @@ CKEDITOR_CONFIGS = {
 }
 
 #to upload image in admin panel
-MEDIA_ROOT='/home/aya/Desktop/Django_Project/newsWebsite/uploads'
+MEDIA_ROOT='/home/aya/Desktop/Django_project/newsWebsite/uploads'
 MEDIA_URL = '/media/'

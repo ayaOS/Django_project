@@ -3,15 +3,15 @@
 <head>
 	<title>User Home Page</title>
 </head>
-<body>
-<h1 style="text-align: center;">New Posts</h1><hr><br>
+<body style="background-color:#F1F1F4;">
+<h1 style="text-align: center; ">New Posts</h1><hr><br>
 {%for p in posts%}
-<div   style="margin: auto; width: 500px; height: 200px; border-style: groove; text-align: justify; overflow-y: scroll; ">
+<div   style="margin: auto; width: 600px; height: 250px; border-style: groove; text-align: justify; overflow-y: scroll; background-color: #FCFCFC;">
 	
 	
 	<h2 style="text-decoration: underline; text-align: center;">{{p.title}}</h2><br>
-	<h3>{{p.content|safe}}</h3>
-	<a href="/newsApp/home/post/{{p.id}}">Show Full Post</a>
+	<h3 style="padding-left: 1cm; padding-right: 1cm;">{{p.content|safe}}</h3>
+	<a href="/newsApp/home/post/{{p.id}}" style="padding-left: 1cm; padding-right: 1cm;">Show Full Post</a>
 </div>
 <br>
 {%endfor%}
