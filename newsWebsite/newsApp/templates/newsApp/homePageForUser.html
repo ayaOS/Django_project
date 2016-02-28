@@ -2,9 +2,13 @@
 <html>
 <head>
 	<title>User Home Page</title>
+
 </head>
+
 <body style="background-color:#F1F1F4;">
+<a href="/logout/">Logout</a>
 <h1 style="text-align: center; ">New Posts</h1><hr><br>
+
 {%for p in posts%}
 <div   style="margin: auto; width: 600px; height: 250px; border-style: groove; text-align: justify; overflow-y: scroll; background-color: #FCFCFC;">
 	
@@ -17,6 +21,31 @@
 {%endfor%}
 
 
-<a href="/logout/">Logout</a>
+
+
+<div>
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
+{{ page.render }}
+</div>
+
+
+
 </body>
 </html>

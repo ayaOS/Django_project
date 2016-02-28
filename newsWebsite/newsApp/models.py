@@ -9,7 +9,12 @@ class cate(models.Model):
  title = models.CharField(max_length=50)
  def __str__(self):
 		return self.title
-		
+
+class Tag(models.Model):
+	tagText = models.CharField(max_length = 20)
+	def __str__(self):
+		return self.tagText
+
 class Post(models.Model):
 	title = models.CharField(max_length=50)
 	content = RichTextUploadingField()
@@ -18,8 +23,7 @@ class Post(models.Model):
 	upload_image = models.ImageField(upload_to='resources/%Y/%m/%d/')
 	def __str__(self):
 		return self.title
-	#image
-	#tag
+	tag = models.ManyToManyField(Tag)
 	
 class User(models.Model):
 	email = models.CharField(max_length=50)
@@ -35,5 +39,8 @@ class Comment(models.Model):
     def __str__(self):
 		return self.text
     #reply_to = models.ForeignKey(Comment, blank=True, null=True)
+
+
+
 
 

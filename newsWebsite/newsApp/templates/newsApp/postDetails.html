@@ -13,6 +13,7 @@
 
 	<img src="{{post.upload_image.url}}" alt="Post Image" height="150" width="150" >
 	<p>{{post.content | safe}}</p>
+	<h3>tags:<a href="#">{{post.tag}}</a></h3>
 
 	<h3 style="text-align: left;">Comments:</h3><br>
 	{%for c in comments%}
