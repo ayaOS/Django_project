@@ -9,10 +9,11 @@ class cate(models.Model):
  title = models.CharField(max_length=50)
  def __str__(self):
 		return self.title
+		
 class Post(models.Model):
 	title = models.CharField(max_length=50)
 	content = RichTextUploadingField()
-	date = models.DateField()
+	date = models.DateTimeField(default = datetime.now)
         cat = models.ForeignKey(cate)
 	upload_image = models.ImageField(upload_to='resources/%Y/%m/%d/')
 	def __str__(self):
@@ -28,7 +29,7 @@ class User(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post)
-    user = models.ForeignKey(User)
+    #user = models.ForeignKey(User)
     text = models.TextField()
     date = models.DateTimeField(default = datetime.now)
     def __str__(self):

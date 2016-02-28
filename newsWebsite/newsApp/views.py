@@ -16,7 +16,7 @@ def homePageForUser(request):
 
 def postDetails(request , post_id):
 	post = get_object_or_404( Post, id=post_id)
-	comments = Comment.objects.order_by('-date')
+	comments = Comment.objects.filter(post=post_id)
 	context = {'post':post,'comments':comments}
 	return render(request,'newsApp/postDetails.html',context)
 

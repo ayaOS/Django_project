@@ -12,12 +12,12 @@
 	<h3>{{post.cat}}</h3>
 
 	<img src="{{post.upload_image.url}}" alt="Post Image" height="150" width="150" >
-	<p>{{post.content}}</p>
+	<p>{{post.content | safe}}</p>
 
 	<h3 style="text-align: left;">Comments:</h3><br>
 	{%for c in comments%}
 	<div style="width: 550px; height: 250px; border-style: solid; overflow-y: scroll; background-color: #FCFCFC;">
-		<h5 style="padding-left: 1cm; padding-right: 1cm;">{{c.date}} , {{c.user}}</h5>
+		<h5 style="padding-left: 1cm; padding-right: 1cm;">{{c.date}} </h5>
 		<h3 style="padding-left: 1cm; padding-right: 1cm;">{{c.text}}</h3>
 		<br>
 	</div>
