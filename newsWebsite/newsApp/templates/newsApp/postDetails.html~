@@ -9,7 +9,7 @@
 
 <div style="width: 600px; height: 500px; text-align: justify; margin: auto; ">
 	<h1 style="text-decoration: underline; text-align: center;">{{post.title}}</h1>
-	<h3>{{post.cat}}</h3>
+	<h3>{{p.cat}}</h3>
 
 	<img src="{{post.upload_image.url}}" alt="Post Image" height="150" width="150" >
 	<p>{{post.content}}</p>

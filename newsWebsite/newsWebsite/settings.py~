@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'newsWebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hiii',
+        'NAME': 'newsdb',
        'USER':'root',
-       'PASSWORD':'iti',
+       'PASSWORD':'1234',
        'HOST':'localhost',
        'PORT':'3306'
     }
