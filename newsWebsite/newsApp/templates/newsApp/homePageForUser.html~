@@ -6,7 +6,7 @@
 </head>
 {% include 'newsApp/header.html' %}
 <body style="background-color:#F1F1F4;">
-
+<a href="/logout/">Logout</a>
 <h1 style="text-align: center; ">New Posts</h1><hr><br>
 
 {%for p in posts%}
