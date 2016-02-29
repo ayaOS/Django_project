@@ -17,7 +17,7 @@ class CustomComment(admin.ModelAdmin):
 
 # register the models
 admin.site.register(Post,CustomPost)
-admin.site.register(Comment,CustomComment)
+#admin.site.register(Comment,CustomComment)
 admin.site.register(Tag)
 admin.site.register(cate)
 

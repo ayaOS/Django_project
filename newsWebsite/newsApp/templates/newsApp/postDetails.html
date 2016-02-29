@@ -18,26 +18,37 @@
 	<p>{{post.content | safe}}</p>
 	<h3 style="color: red;">Tags: <a href="#">{{post.tag}}</a></h3>
 	<hr>
-<!--	<h3 style="color: red;">Comments:</h3><br>
+	<h3 style="color: red;">Comments:</h3><br>
 	{%for c in comments%}
 	<div style="width: 550px; height: 250px; border-style: solid; overflow-y: scroll; background-color: #FCFCFC;">
 		<h5 style="padding-left: 1cm; padding-right: 1cm;">{{c.date}} </h5>
 		<h3 style="padding-left: 1cm; padding-right: 1cm;">{{c.text}}</h3>
 		<br>
--->
+
 	</div>
 	<br>
 	{%endfor%}
+
 	{% render_comment_list for post %}
 	{% if request.user.is_authenticated %}
 
 	 
 	{% get_comment_form for post as form1 %} 
-	<form action="/comments/post" method="post">
+
+ 	<form action="/comments/post/" method="post">{% csrf_token %}
+ 	{{form1.csrfmiddlewaretoken}}
 	{{form1.comment}}
+
+	{{form1.content_type}}
+	{{form1.object_pk}}
+	{{form1.timestamp}}
+	{{form1.security_hash}}
+	{{form1.parent}}
+
+
 	<br>
-	<input type="submit" value="add comment"></input>	
-	</form>
+	<input type="submit" value="add comment"></input>
+	</form> 
 	<br><br><br><br>
 	
 
