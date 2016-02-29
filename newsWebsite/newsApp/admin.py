@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Post
-from .models import Comment
+from .models import Post,cate
+from .models import Comment,Tag
 
 
 class CustomPost(admin.ModelAdmin):
@@ -18,3 +18,7 @@ class CustomComment(admin.ModelAdmin):
 # register the models
 admin.site.register(Post,CustomPost)
 admin.site.register(Comment,CustomComment)
+admin.site.register(Tag)
+admin.site.register(cate)
+
+
