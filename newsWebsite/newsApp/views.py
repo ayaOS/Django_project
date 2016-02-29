@@ -39,8 +39,6 @@ def postDetails(request , post_id):
 	context = {'post':post,'comments':comments}
 	return render(request,'newsApp/postDetails.html',context)
 
-
-
 @csrf_protect
 def register(request):
     if request.method == 'POST':
@@ -72,5 +70,9 @@ def logout_page(request):
     logout(request)
     return HttpResponseRedirect('/')
 
+def categry(request,cat_id):
+    post=Post.objects.filter(cat=cat_id)
+    context={'post':post}
+    return render(request,'newsApp/cat.html',context)
 
 

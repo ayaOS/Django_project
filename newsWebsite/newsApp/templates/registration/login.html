@@ -1,12 +1,49 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign In</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
     {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
     <form method="post" action=".">{% csrf_token %}
-        <table border="0">
-            <tr><th><label for="id_username">Username:</label></th><td>{{ form.username }}</td></tr>
-            <tr><th><label for="id_password">Password:</label></th><td>{{ form.password }}</td></tr>
-        </table>
+     
+        <div class="container">
+            <div class="row">
+                <div class="Absolute-Center is-Responsive">
+                            <!--<div id="logo-container"></div>-->
+      
+                      <center>
+                           <h2>SignIn Form</h2>
+                      </center>
+                 </div>
+            </div>
+
+        </div>             
+         <div class="col-sm-12 col-md-10 col-md-offset-1">
+                            <form action="HomeAfterSign.html">
+                                  <div class="form-group input-group">
+                                       <span class="input-group-addon">
+                                              <span class="glyphicon glyphicon-envelope"></span>
+                                       </span>
+                                        <label for="id_username">Username:{{ form.username }}
+       
+            </div>
+
+            <div class="form-group input-group">
+                                       <span class="input-group-addon">
+                                              <span class="glyphicon glyphicon-lock"></span>
+                                       </span>
+          <label for="id_password">Password:{{ form.password }} 
+          </div>
+       
         <input type="submit" value="Login" />
         <input type="hidden" name="next" value="/home" />
     </form>

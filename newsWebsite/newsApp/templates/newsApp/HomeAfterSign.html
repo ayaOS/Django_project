@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Main Page For User</title>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+	 <iframe src="HeadAfterSign.html" style="border:none"  width=1310 height=166 style=" position: absolute; top: 40px; left: 40px; right: 40px; bottom: 40px;"></iframe>
+		
+		<h1 style="text-align: center; ">New Posts</h1><hr><br>
+
+{%for p in posts%}
+<div   style="margin: auto; width: 600px; height: 250px; border-style: groove; text-align: justify; overflow-y: scroll; background-color: #FCFCFC;">
+	
+	
+	<h2 style="text-decoration: underline; text-align: center;">{{p.title}}</h2><br>
+	<h3 style="padding-left: 1cm; padding-right: 1cm;">{{p.content | safe}}</h3>
+	<a href="/newsApp/home/post/{{p.id}}" style="padding-left: 1cm; padding-right: 1cm;">Show Full Post</a>
+</div>
+<br>
+{%endfor%}
+
+
+
+
+<div>
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
+{{ page.render }}
+</div>
+
+
+
+</body>
+</html>
+
+	
+	</body>
+</html>

@@ -19,7 +19,7 @@ class Post(models.Model):
 	title = models.CharField(max_length=50)
 	content = RichTextUploadingField()
 	date = models.DateTimeField(default = datetime.now)
-        cat = models.ForeignKey(cate)
+	cat = models.ForeignKey(cate)
 	upload_image = models.ImageField(upload_to='resources/%Y/%m/%d/')
 	def __str__(self):
 		return self.title
