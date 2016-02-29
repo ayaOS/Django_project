@@ -1,3 +1,5 @@
+{% load threadedcomments_tags %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,23 +10,50 @@
 <h2><a href="/newsApp/home" >Back</a></h2>
 
 <div style="width: 600px; height: 500px; text-align: justify; margin: auto; ">
-	<h1 style="text-decoration: underline; text-align: center;">{{post.title}}</h1>
-	<h3>{{post.cat}}</h3>
+	<h1 style=" text-align: center;">{{post.title}}</h1>
+	<h3 style="color: red;">Category: {{post.cat}}</h3><hr>
 
 	<img src="{{post.upload_image.url}}" alt="Post Image" height="150" width="150" >
+	<h3 style="color: red;">Content: </h3>
 	<p>{{post.content | safe}}</p>
-	<h3>tags:<a href="#">{{post.tag}}</a></h3>
-
-	<h3 style="text-align: left;">Comments:</h3><br>
+	<h3 style="color: red;">Tags: <a href="#">{{post.tag}}</a></h3>
+	<hr>
+	<h3 style="color: red;">Comments:</h3><br>
 	{%for c in comments%}
 	<div style="width: 550px; height: 250px; border-style: solid; overflow-y: scroll; background-color: #FCFCFC;">
 		<h5 style="padding-left: 1cm; padding-right: 1cm;">{{c.date}} </h5>
 		<h3 style="padding-left: 1cm; padding-right: 1cm;">{{c.text}}</h3>
 		<br>
+
 	</div>
 	<br>
 	{%endfor%}
 
+	{% render_comment_list for post %}
+	{% if request.user.is_authenticated %}
+
+	 
+	{% get_comment_form for post as form1 %} 
+
+ 	<form action="/comments/post/" method="post">{% csrf_token %}
+ 	{{form1.csrfmiddlewaretoken}}
+	{{form1.comment}}
+
+	{{form1.content_type}}
+	{{form1.object_pk}}
+	{{form1.timestamp}}
+	{{form1.security_hash}}
+	{{form1.parent}}
+
+
+	<br>
+	<input type="submit" value="add comment"></input>
+	</form> 
+	<br><br><br><br>
+	
+
+	{% endif %}
+   
 	
 
 </div>

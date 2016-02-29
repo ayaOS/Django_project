@@ -22,11 +22,36 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^newsApp/', include('newsApp.urls') ),
+    url(r'^comments/', include('django_comments.urls')),
   
    #to upload images
    url(r'^ckeditor/', include('ckeditor_uploader.urls')), #Added Uploader url
    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT}),
+
+
+
+
+ url(r'^home/$',listing ),
+    url(r'^login$', 'django.contrib.auth.views.login'),
+    url(r'^logout/$', logout_page),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login'), # If user is not login it will redirect to login page
+    url(r'^register/$', register),
+    url(r'^$', listing),
+    url(r'^register/success/$', register_success),
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

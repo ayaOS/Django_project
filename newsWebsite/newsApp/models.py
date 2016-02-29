@@ -3,6 +3,7 @@ from datetime import date,datetime
 from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.contrib.auth.models import User
 
 # Create your models here.
 class cate(models.Model):
@@ -25,15 +26,10 @@ class Post(models.Model):
 		return self.title
 	tag = models.ManyToManyField(Tag)
 	
-class User(models.Model):
-	email = models.CharField(max_length=50)
-	Name = models.CharField(max_length=50)
-	phone=models.IntegerField()
-	passwd=models.IntegerField()
 
 class Comment(models.Model):
     post = models.ForeignKey(Post)
-    #user = models.ForeignKey(User)
+    user = models.ForeignKey(User)
     text = models.TextField()
     date = models.DateTimeField(default = datetime.now)
     def __str__(self):

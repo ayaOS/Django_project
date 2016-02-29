@@ -1,0 +1,13 @@
+{% if user.is_authenticated %}
+<form method=post action="home/addComment">{% csrf_token %}
+ <p>{{ user.id}}<p>
+    <textarea rows="4" cols="50">
+
+</textarea> 
+ <input type="submit" value="Submit">
+</form>
+ 
+
+ 
+{% endif %}
+   

@@ -37,6 +37,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'threadedcomments',
+    'django_comments',
+    'django.contrib.sites',
     'ckeditor_uploader',
     'newsApp',
     'django.contrib.admin',
@@ -47,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
 ]
+COMMENTS_APP = 'threadedcomments'
+SITE_ID = 1
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
